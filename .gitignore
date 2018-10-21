@@ -6,3 +6,6 @@ financeapp/*
 
 # ignore logs
 *.log
+
+# ignore retry
+**.retry

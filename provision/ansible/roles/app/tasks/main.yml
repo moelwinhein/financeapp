@@ -29,3 +29,11 @@
     virtualenv: /vagrant/financeapp/venv
     virtualenv_python: python3
     state: present
+
+- name: clone django app repo
+  git:
+    repo: "https://github.com/moelwinhein/myfinance.git"
+    remote: origin
+    version: master
+    dest: /vagrant/financeapp/main
+    update: no
