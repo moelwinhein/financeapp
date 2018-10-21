@@ -15,25 +15,17 @@
 - name: create app directory
   file: path=/vagrant/financeapp state=directory mode=0755
 
-- name: install django
-  pip:
-    name: django
-    version: "2.1.2"
-    virtualenv: /vagrant/financeapp/venv
-    virtualenv_python: python3
-    state: present
-
-- name: install mysqlclient
-  pip:
-    name: mysqlclient
-    virtualenv: /vagrant/financeapp/venv
-    virtualenv_python: python3
-    state: present
-
 - name: clone django app repo
   git:
     repo: "https://github.com/moelwinhein/myfinance.git"
     remote: origin
     version: master
-    dest: /vagrant/financeapp/main
+    dest: /vagrant/financeapp/myfinance
     update: no
+
+- name: install django app requirements
+  pip:
+    requirements: /vagrant/financeapp/myfinance/requirements.txt
+    virtualenv: /vagrant/financeapp/venv
+    virtualenv_python: python3
+    state: present
