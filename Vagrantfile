@@ -2,6 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
+  config.hostmanager.enabled = true
 
   config.vm.define "app", primary: true do |app|
     app.vm.box = "ubuntu/xenial64"
@@ -32,6 +33,8 @@ Vagrant.configure("2") do |config|
     app.vm.provision "ansible_local" do |ansible|
       ansible.compatibility_mode = "2.0"
       ansible.playbook = "provision/ansible/site.yml"
+      ansible.inventory_path = "/vagrant/provision/ansible/inventory"
+      ansible.limit = "all"
     end
   end
 end

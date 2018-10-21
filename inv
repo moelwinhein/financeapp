@@ -1,5 +1,0 @@
-[webserver]
-localhost ansible_connection=local
-
-[database]
-localhost ansible_connection=local

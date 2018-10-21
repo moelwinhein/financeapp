@@ -1,0 +1,5 @@
+[webserver]
+financeapp.dev ansible_connection=local
+
+[database]
+financeapp.dev ansible_connection=local

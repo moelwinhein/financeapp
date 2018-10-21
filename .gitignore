@@ -9,3 +9,6 @@ financeapp/*
 
 # ignore retry
 **.retry
+
+# mac
+.DS_Store
