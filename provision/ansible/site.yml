@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: update apt cache
+      apt: update_cache=yes cache_valid_time=86400
+      
+- import_playbook: app.yml
+- import_playbook: db.yml

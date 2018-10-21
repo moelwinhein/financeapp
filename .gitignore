@@ -1,0 +1,8 @@
+# ignore vagrant vms
+.vagrant
+
+# ignore main project folder
+financeapp/*
+
+# ignore logs
+*.log
